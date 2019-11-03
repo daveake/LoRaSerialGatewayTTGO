@@ -1,15 +1,15 @@
-This project provides a simple serial interface to SPI LoRa modules, using suitable Arduino or compatible boards.  LoRa modules are 3.3V logic so it's best to use an Arduino with 3.3V logic, such as the Arduino Mini Pro.
+This is firmware for a TTGO T-Beam device, to make it into a HAB LoRa receiver.
 
-The Arduino serial can then connect to a PC/Mac/whatever using a suitable TTL serial connection (e.g. Prolific or FTDI USB adapter) or Tablet/Phone/whatever using Bluetooth (e.g. HC-06) Bluetooth serial adapter).
+The receiver can be connected to a phone or tablet or PC, using Bluetooth or BLE (Bluetooth Low Power) or USB Serial so in order to view the received telemetry, upload to habhub etc.  It supports multiple simulateneous connections.
 
-For a Windows PC, this software can be used with my serial gateway for uploading telemetry/SSDV to Habitat.  See:
+See my github account and blog for suitable host software for Windows, Mac, iPad, iPhone, Android phone or tablet.
 
-https://github.com/daveake/LoRaSerialGateway
+
 
 Serial Protocol
 ===============
 
-The serial connection is 57600 baud (**changed from V1.0**) and will send status information and incoming LoRa packets without being polled.  Each of these is of the form
+The same protocol is used over USB, Bluetooth and BLE.  It accepts commands of the form
 
 something=value<CR><LF>
 
